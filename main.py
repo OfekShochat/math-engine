@@ -272,6 +272,7 @@ def iteretive_deepening(board, depth, alpha, beta, color, book_path = r"/Volumes
    """t = Thread(target=curr)
    t.daemon = True
    t.start()"""
+   sst = time()
    for d in range(depth):
       value = -inf
       st = time()
@@ -298,7 +299,7 @@ def iteretive_deepening(board, depth, alpha, beta, color, book_path = r"/Volumes
          #pbar.update(1)
       if firstguess >= beta:
          break
-      print("info depth {} time {} nodes {} score cp {} nps {} pv {}".format(d+1, int((time()-st)*1000), nodesss, value, nodesss/(time() - st), best_move))
+      print("info depth {} time {} nodes {} score cp {} nps {} pv {}".format(d+1, int((time()-sst)*1000), nodesss, value, nodesss/(time() - st), best_move))
       #pbar.reset()
    return best_move
 
