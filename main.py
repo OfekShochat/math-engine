@@ -525,4 +525,5 @@ def game():
 if __name__=="__main__":
    while True:
       i = input().split(", ")
-      iteretive_deepening(chess.Board(), int(i[0]), -inf, 10000, int(i[1]))
+      board = chess.Board(i[0])
+      iteretive_deepening(board, int(i[1]), -inf, 10000, 1 if board.turn else -1)
